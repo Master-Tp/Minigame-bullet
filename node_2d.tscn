@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://4pqund3nukl7"]
+
+[ext_resource type="Script" uid="uid://dt3nc4our1mgp" path="res://node_2d.gd" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://kubigd0elbjr" path="res://Untitled551_20251121220241 (1).PNG" id="2_0e48y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0e48y"]
+radius = 140.01428
+
+[node name="Enemy" type="Area2D" groups=["enemy"]]
+script = ExtResource("1_wtcfe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(569.5, -10.999983)
+scale = Vector2(0.16113281, 0.13541667)
+texture = ExtResource("2_0e48y")
+
+[node name="ShootTimer" type="Timer" parent="."]
+
+[node name="Rotater" type="Node2D" parent="."]
+position = Vector2(582, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(587, -27)
+shape = SubResource("CircleShape2D_0e48y")
+
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]

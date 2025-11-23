@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2x1yeex6f81q"]
+
+[ext_resource type="PackedScene" uid="uid://4pqund3nukl7" path="res://node_2d.tscn" id="1_73ed6"]
+[ext_resource type="Texture2D" uid="uid://b27kptlubvab7" path="res://BG1 (1).PNG" id="1_y1wmj"]
+[ext_resource type="PackedScene" uid="uid://bbrn7wia3wvf7" path="res://xxx.tscn" id="2_f1s06"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(877.5, 494)
+scale = Vector2(0.68398434, 0.67638886)
+texture = ExtResource("1_y1wmj")
+
+[node name="Enemy" parent="." instance=ExtResource("1_73ed6")]
+position = Vector2(241, 189)
+
+[node name="Serena" parent="." instance=ExtResource("2_f1s06")]
+position = Vector2(841, 788)

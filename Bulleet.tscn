@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://l1j48opdoc7p"]
+
+[ext_resource type="Script" uid="uid://unfjdshqdkvm" path="res://bbbbb.gd" id="1_tx88w"]
+[ext_resource type="Texture2D" uid="uid://b2gruu0phayg3" path="res://1 (1).png" id="2_vfqet"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8uisq"]
+radius = 60.00833
+
+[node name="Bullet" type="Area2D" groups=["wave"]]
+script = ExtResource("1_tx88w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(156.23975, 411.1601)
+rotation = 4.712389
+scale = Vector2(0.23118502, 0.2763699)
+texture = ExtResource("2_vfqet")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(158, 378)
+shape = SubResource("CircleShape2D_8uisq")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

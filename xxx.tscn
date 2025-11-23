@@ -1,0 +1,129 @@
+[gd_scene load_steps=15 format=3 uid="uid://bbrn7wia3wvf7"]
+
+[ext_resource type="Texture2D" uid="uid://5fxb2xc2v8ts" path="res://SERENA 2 (1).png" id="1_an5l3"]
+[ext_resource type="Script" uid="uid://c3xojkmvisro4" path="res://xxx.gd" id="1_flo1i"]
+[ext_resource type="Texture2D" uid="uid://caifjskx71nrl" path="res://Untitled21_20251113141025.png" id="3_u0yh1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flo1i"]
+atlas = ExtResource("1_an5l3")
+region = Rect2(1080, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0yh1"]
+atlas = ExtResource("1_an5l3")
+region = Rect2(2160, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ivdb"]
+atlas = ExtResource("1_an5l3")
+region = Rect2(3240, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gyhms"]
+atlas = ExtResource("1_an5l3")
+region = Rect2(0, 1080, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_les3x"]
+atlas = ExtResource("1_an5l3")
+region = Rect2(1080, 1080, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yy4d"]
+atlas = ExtResource("1_an5l3")
+region = Rect2(2160, 1080, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vvha"]
+atlas = ExtResource("1_an5l3")
+region = Rect2(3240, 1080, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71x25"]
+atlas = ExtResource("1_an5l3")
+region = Rect2(0, 2160, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwk5q"]
+atlas = ExtResource("1_an5l3")
+region = Rect2(1080, 2160, 1080, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jpnb7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flo1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0yh1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ivdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gyhms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_les3x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yy4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vvha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71x25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwk5q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flo1i"]
+size = Vector2(337.27274, 769.15125)
+
+[node name="Serena" type="Node2D"]
+script = ExtResource("1_flo1i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(7.0000153, 39.000008)
+scale = Vector2(0.122222215, 0.09814812)
+sprite_frames = SubResource("SpriteFrames_jpnb7")
+autoplay = "default"
+frame_progress = 0.9321049
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D" groups=["bull"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+position = Vector2(16.36351, -8.392334e-05)
+scale = Vector2(1, 0.9999998)
+shape = SubResource("RectangleShape2D_flo1i")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/HBoxContainer/TextureRect"]
+position = Vector2(74.49999, 61.5)
+scale = Vector2(0.03385417, 0.036111116)
+texture = ExtResource("3_u0yh1")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/HBoxContainer/TextureRect2"]
+position = Vector2(111.5, 60.5)
+scale = Vector2(0.034895834, 0.036111113)
+texture = ExtResource("3_u0yh1")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/HBoxContainer/TextureRect3"]
+position = Vector2(97.5, 58.999996)
+scale = Vector2(0.032812495, 0.035185177)
+texture = ExtResource("3_u0yh1")
+
+[connection signal="area_shape_entered" from="AnimatedSprite2D/Area2D" to="." method="_on_area_2d_area_shape_entered"]
